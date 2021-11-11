@@ -1,0 +1,54 @@
+**when required, you can create, delete, edit, etc the existing objects, and if that is NOT allowed, they will indicate that you should not edit, or modify an specific object.
+
+**when required use a particular Namespace, they will indicate, if not indicated, then consider it as default one.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+- kubeadmin upgrade from 1.20 to 1.20.1 in master node only, not in worker nodes.
+
+- perform an etcd backup and perform backup a restore 
+
+* - In one sidecar application they gave you the name of the one ".log" file and the path where that .log file is located, so you are asked to mounth that file in the pod definition file of the app.
+
+* - You are asked to monitor the logs of a pod and save in a given directory, only the lines which are matching with some kind of error, for example: "Entry not found" 
+[example of logs in the excercise:
+  line1 - Host is not reachable
+  line2 - Command not found
+  line3 - Entry not found
+  line4 - Fatal error ......]
+
+* - Create a pod runing a single container which uses 4 images: niginx + busybox + redis
+
+* - From the cluster, get the pods which are having higher CPU utilizacion and save the output in a given directory.
+[example of pods and their CPU usage:
+   name PCU
+   pod1 0
+   pod2 45
+   pod3 88
+   pod4  0
+   pod5  0
+   pod6 23..]
+
+- From the cluster, get all the nodes in Ready state and save the output in a given directory [don't include the nodes tainted or unavailable]
+
+- Mark the node1 unavailable and reeschedule the pods. [the cluster only has master + node1 , so the pods are all in node1]
+
+* - One excercise asks to mount a PVC in a Pod, and they gave you the specifications of the PVC:
+  >> class: csi-hostpath-sc
+     storage: 10Mi
+ then, they ask you once it's mounted in the Pod, use "kubectl edit" or "kubectl patch" to increase the storage of the PVC from 10Mi to 70Mi and also change it to emptyDir [if I am not wrong], and record. [I guess they refer by "recording" to record the changes made for the PVC]
+
+- in a cluster where there are kinda 5 namespaces: To Create a network policy that allows the ingress of the Pods of the Namespace "A" through an specific port, i.e port "6300" to the applications in namespace "B". Also, the ingress of pods from other namespaces should not be allowed, and ingress from other ports than 6300 should not be allowed.
+
+
+- Troubleshoot the issue in one cluster [the node1 is Not ready] so fix that.
+
+* - To create a PV with a given hostpath, namespace and some other given specifications.
+
+- To create a Service account, cluster role and cluster role binding for: daemonset, deployment, statefulset
+
+- Increase the replicas of a given deployment.
+
+- For a given deployment, you are asked to edit it and add "tcp 80" port on the container, then expose the container of that deployment as a service.
+
+- in Some excercise it was requested to create a Nodeport for an existing app to expose it as a service. [don't remember more details]
